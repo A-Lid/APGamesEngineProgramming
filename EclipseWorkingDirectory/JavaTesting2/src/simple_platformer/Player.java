@@ -13,7 +13,7 @@ import processing.core.PVector;
  */
 public class Player extends Sprite {
 	float speed = 3f;
-	float gravity = 0.5f;
+	float gravity = 0.1f;
 	// PVectors for Velocity and Size of Player
 	private PVector velocity = new PVector(0, 0);
 	private PVector size = new PVector(12,12);
@@ -27,8 +27,9 @@ public class Player extends Sprite {
 		super(p);
 		// TODO Auto-generated constructor stub
 	}
-	 public Player(PApplet p, float x, float y, float w, float h) {
+	 public Player(PApplet p, float x, float y, float w, float h, String n) {
 	        super(p);
+	        this.name = n;
 	        speed = 0.2f;
 	    }
 	 public void start() {

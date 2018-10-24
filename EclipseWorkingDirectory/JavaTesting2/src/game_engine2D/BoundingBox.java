@@ -7,6 +7,7 @@ public class BoundingBox {
 	public float right;
 	public float top;
 	public float bottom;
+	public String name;
 	
 	
 	public BoundingBox() {}	

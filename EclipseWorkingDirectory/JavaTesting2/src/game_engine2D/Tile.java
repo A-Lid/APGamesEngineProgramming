@@ -15,10 +15,11 @@ public class Tile extends Sprite {
 	int strokeColour;
 	int fillColour;
 	
-	public Tile(PApplet p, int x, int y, int w, int h) {
+	public Tile(PApplet p, int x, int y, int w, int h, String n) {
 		super(p, x, y);
 		this.width = w;
 		this.height = h;
+		this.name = n;
 		this.strokeColour = parent.color(255, 255, 255);
 		this.fillColour = parent.color(0, 0, 0);
 	}

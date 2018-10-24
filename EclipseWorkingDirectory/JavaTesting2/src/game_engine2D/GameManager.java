@@ -9,6 +9,7 @@ public class GameManager {
         parent = p;
         gameObjects = new ArrayList<GameObject>();
         BoundingBoxs = new ArrayList<BoundingBox>();
+        collidingGameObject = new ArrayList<GameObject>();
     }
 
     // a list of all the game objects in the game (?)
@@ -16,10 +17,14 @@ public class GameManager {
 
     private ArrayList<BoundingBox> BoundingBoxs;
 
+    private ArrayList<GameObject> collidingGameObject;
+
     //function for adding a game object to the list
     public void addObject(GameObject g){
         gameObjects.add(g);
     }
+
+    public void addCollidingObject(GameObject g) { collidingGameObject.add(g);};
 
     public void addBoundingBox(GameObject b){BoundingBoxs.add(b.transform.WorldBoundingBox());}
 
@@ -39,15 +44,19 @@ public class GameManager {
     //updates the game object when it's called.
     public void UpdateAll() {
 
-        for (BoundingBox bb1:BoundingBoxs) {
+        for (GameObject g: collidingGameObject)
+        {
+            boolean collided = g.ColCheck(g, BoundingBoxs);
+        }
+        /*for (BoundingBox bb1:BoundingBoxs) {
             for (BoundingBox bb2: BoundingBoxs) {
-                if (bb1.bottom < bb2.top)
+                if ((bb1.bottom < bb2.top /*&& bb1.bottom > bb2.bottom))
                 {
-
-                    //Aled Continue Writing this
-                }
+                System.out.println("Consider yourself ");
+                //Aled Continue Writing this
             }
         }
+        }*/
         
     	parent.background(background);
         for(int i = 0; i < gameObjects.size(); i++){
