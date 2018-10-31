@@ -23,23 +23,22 @@ public abstract class GameObject extends ProcessingEntity {
 	public boolean ColCheck(GameObject check, ArrayList<BoundingBox> collisions)
 	{
 		boolean retVal = false;
-		BoundingBox bb1 = check.transform.boundingBox;
+		BoundingBox bb1 = check.transform.WorldBoundingBox();
 			for (BoundingBox bb2: collisions) {
 
-				System.out.println(bb1.right + " " + bb2.left + " " + bb2.right);
-
-				if (bb1.right > bb2.left && bb1.right < bb2.right)
+				System.out.println(bb1.right + " " + bb2.left + " " + bb1.left + " " + bb2.right);
+				if (bb1.right > bb2.left && bb1.left < bb2.right)
 				{
-
 					System.out.println("Gone through the middle");
-					if (bb1.bottom < bb2.top /*&& bb1.top < bb2.top*/)
+					if (bb1.bottom > bb2.top && bb1.top > bb2.top)
 					{
-						check.transform.position.y = bb2.top;
+						check.transform.position.y = bb2.top + check.transform.size.y/2;
+
 
 						System.out.println("Consider yourself collided with top of  " + check.name);
 						retVal = true;
 					}
-					if (bb1.top < bb2.bottom && bb1.top > bb2.top)
+					else if (bb1.top < bb2.bottom && bb1.top > bb2.top)
 					{
 						check.transform.position.y = bb2.bottom;
 						System.out.println("Consider yourself collided with bottom of " + check.name);

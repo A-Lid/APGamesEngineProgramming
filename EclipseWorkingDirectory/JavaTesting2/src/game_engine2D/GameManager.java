@@ -12,6 +12,8 @@ public class GameManager {
         collidingGameObject = new ArrayList<GameObject>();
     }
 
+
+
     // a list of all the game objects in the game (?)
     private ArrayList<GameObject> gameObjects;
 
@@ -46,8 +48,9 @@ public class GameManager {
 
         for (GameObject g: collidingGameObject)
         {
-            boolean collided = g.ColCheck(g, BoundingBoxs);
+            if(g.ColCheck(g, BoundingBoxs)) g.transform.velocity.y = 0;
         }
+
         /*for (BoundingBox bb1:BoundingBoxs) {
             for (BoundingBox bb2: BoundingBoxs) {
                 if ((bb1.bottom < bb2.top /*&& bb1.bottom > bb2.bottom))

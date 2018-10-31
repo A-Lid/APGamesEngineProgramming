@@ -17,8 +17,11 @@ public class Transform {
 	public PVector position = new PVector(0,0);
 	public PVector rotation = new PVector(0,0);
 	public PVector scale = new PVector(0,0);;
+	public PVector velocity = new PVector(0, 0);
+	public PVector size = new PVector(12,12);
 
 	public BoundingBox boundingBox = new BoundingBox(-1,1,-1,1);
+
 	public BoundingBox WorldBoundingBox() {
 		BoundingBox bb = new BoundingBox();
 		bb.left = position.x + boundingBox.left;

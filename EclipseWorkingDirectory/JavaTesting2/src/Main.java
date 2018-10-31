@@ -10,6 +10,7 @@ public class Main extends PApplet {
 		background(0);
 		launcher = new Launcher(this);
 		launcher.StartGame();
+
 	}
 	public void draw() {
 		launcher.UpdateAll();

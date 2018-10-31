@@ -14,9 +14,10 @@ import processing.core.PVector;
 public class Player extends Sprite {
 	float speed = 3f;
 	float gravity = 0.1f;
+	public boolean collided;
 	// PVectors for Velocity and Size of Player
-	private PVector velocity = new PVector(0, 0);
-	private PVector size = new PVector(12,12);
+	/*private PVector velocity = new PVector(0, 0);
+	private PVector size = new PVector(12,12);*/
 	//colouring in.
 	public int stroke = parent.color(120,120,255);
 	public int fill = parent.color(255);
@@ -34,6 +35,7 @@ public class Player extends Sprite {
 	    }
 	 public void start() {
 	    //start in center of parent
+		 this.transform.size = new PVector(12, 12);
 		 this.transform.position.x = parent.width / 2;
 		 this.transform.position.y = parent.height / 2;
 	 }
@@ -44,9 +46,9 @@ public class Player extends Sprite {
 	public void update() {
 		// TODO Auto-generated method stub
         //move this to physics soonish Aled.
-		velocity.y += gravity;
-		this.transform.position.x += velocity.x;
-		this.transform.position.y += velocity.y;
+		this.transform.velocity.y += gravity;
+		this.transform.position.x += this.transform.velocity.x;
+		this.transform.position.y += this.transform.velocity.y;
 
 	}
 	@Override
@@ -54,7 +56,7 @@ public class Player extends Sprite {
 	    //renders the player in the right place.
 		parent.fill(this.fill);
 		parent.stroke(this.stroke);
-		parent.rect(this.transform.position.x, this.transform.position.y, this.size.x, this.size.y);
+		parent.rect(this.transform.position.x, this.transform.position.y, this.transform.size.x, this.transform.size.y);
 
 	}
 }
