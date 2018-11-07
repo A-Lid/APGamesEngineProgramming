@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d4a88f4f-8376-4060-9cba-deb7a668c048" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/game_engine2D/Physics2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game_engine2D/BoundingBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_engine2D/BoundingBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game_engine2D/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_engine2D/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game_engine2D/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_engine2D/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game_engine2D/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_engine2D/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simple_platformer/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simple_platformer/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simple_platformer/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simple_platformer/Player.java" afterDir="false" />
-    </list>
+    <list default="true" id="d4a88f4f-8376-4060-9cba-deb7a668c048" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +13,7 @@
     <session id="-1830380450">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.opened" value="2" />
@@ -105,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game_engine2D/GameObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="204">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -237,7 +228,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541592827975" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541593180461" />
     <property name="last_opened_file_path" value="D:/processing-3.3.7/core/library/core.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -291,7 +282,7 @@
       <option name="presentableId" value="Default" />
       <updated>1540978342420</updated>
       <workItem from="1540978363427" duration="10994000" />
-      <workItem from="1541584278796" duration="8786000" />
+      <workItem from="1541584278796" duration="9129000" />
     </task>
     <task id="LOCAL-00001" summary="31/10/18 Spooky Day">
       <created>1540990404171</created>
@@ -304,11 +295,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19780000" />
+    <option name="totallyTimeSpent" value="20123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -319,7 +309,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32952183" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32952183" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -463,8 +453,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game_engine2D/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="204">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
