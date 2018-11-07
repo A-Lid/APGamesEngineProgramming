@@ -5,6 +5,7 @@ package simple_platformer;
 
 import game_engine2D.Sprite;
 import processing.core.PApplet;
+import processing.core.PConstants;
 import processing.core.PVector;
 
 /**
@@ -14,7 +15,6 @@ import processing.core.PVector;
 public class Player extends Sprite {
 	float speed = 3f;
 	float gravity = 0.1f;
-	public boolean collided;
 	// PVectors for Velocity and Size of Player
 	/*private PVector velocity = new PVector(0, 0);
 	private PVector size = new PVector(12,12);*/
@@ -46,17 +46,21 @@ public class Player extends Sprite {
 	public void update() {
 		// TODO Auto-generated method stub
         //move this to physics soonish Aled.
-		this.transform.velocity.y += gravity;
-		this.transform.position.x += this.transform.velocity.x;
-		this.transform.position.y += this.transform.velocity.y;
+		//physics2D.Gravity(this);
 
 	}
 	@Override
 	public void render(){
+
+
 	    //renders the player in the right place.
 		parent.fill(this.fill);
 		parent.stroke(this.stroke);
 		parent.rect(this.transform.position.x, this.transform.position.y, this.transform.size.x, this.transform.size.y);
 
+		parent.fill(0,255,0);
+		parent.rectMode(PConstants.CORNERS);
+		parent.rect(this.transform.position.x + this.transform.boundingBox.left, this.transform.position.y + this.transform.boundingBox.top, this.transform.position.x + this.transform.boundingBox.right, this.transform.position.y + this.transform.boundingBox.bottom);
+		parent.rectMode(PConstants.CENTER);
 	}
 }

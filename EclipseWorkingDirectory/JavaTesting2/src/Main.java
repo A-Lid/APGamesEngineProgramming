@@ -7,6 +7,7 @@ public class Main extends PApplet {
 	}
 	Launcher launcher;
 	public void setup() {
+		rectMode(CENTER);
 		background(0);
 		launcher = new Launcher(this);
 		launcher.StartGame();

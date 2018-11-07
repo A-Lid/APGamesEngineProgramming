@@ -7,6 +7,7 @@ public class BoundingBox {
 	public float right;
 	public float top;
 	public float bottom;
+	public PVector objectSize = new PVector(0,0);
 	public String name;
 	
 	
@@ -21,6 +22,7 @@ public class BoundingBox {
 	}
 	public void FromSize(PVector size)
 	{
+		this.objectSize = size;
 		this.left = -size.x/2f;
 		this.right = size.x/2f;
 		this.top = -size.y/2f;
