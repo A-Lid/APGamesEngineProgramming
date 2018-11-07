@@ -19,4 +19,13 @@ public class Main extends PApplet {
 	public void settings() {
 		size(640,480);
 	}
+
+	public void keyPressed()
+	{
+		launcher.KeyPressed(key, keyCode);
+	}
+	public void keyReleased()
+	{
+		launcher.KeyReleased(key, keyCode);
+	}
 }

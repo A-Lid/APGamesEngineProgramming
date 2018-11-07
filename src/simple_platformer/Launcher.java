@@ -20,6 +20,9 @@ public class Launcher extends BaseLauncher{
         player.start();
         player.transform.boundingBox.FromSize(player.transform.size);
         this.gameManager.addObject(player);
+
+        this.gameManager.addPlayerObject(player);
+
         //this.gameManager.addBoundingBox(player);
         this.gameManager.addPhysicsObject(player);
    

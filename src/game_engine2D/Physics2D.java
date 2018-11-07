@@ -12,7 +12,7 @@ public class Physics2D {
     public boolean ColCheck(GameObject check, ArrayList<BoundingBox> collisions)
     {
         boolean retVal = false;
-        System.out.println(check.transform.position.y);
+        //System.out.println(check.transform.position.y);
         BoundingBox bb1 = check.transform.WorldBoundingBox();
         for (BoundingBox bb2: collisions) {
 
@@ -32,7 +32,7 @@ public class Physics2D {
                     //System.out.println(check.transform.position.y);
 
 
-                    System.out.println("Consider yourself collided with top of  " + check.name);
+                    //System.out.println("Consider yourself collided with top of  " + check.name);
                     retVal = true;
                 }
                 else if (bb1.top < bb2.bottom && bb1.top > bb2.top)
@@ -50,10 +50,10 @@ public class Physics2D {
 
         return retVal;
     }
-    public void Gravity(GameObject affectedObject)
+    public void Gravity(GameObject g)
     {
-        if (affectedObject.Collided != "TOP") affectedObject.transform.velocity.y += gravity;
-        affectedObject.transform.position.x += affectedObject.transform.velocity.x;
-        affectedObject.transform.position.y += affectedObject.transform.velocity.y;
+        if (g.Collided != "TOP") g.transform.velocity.y += gravity;
+        g.transform.position.x += g.transform.velocity.x;
+        g.transform.position.y += g.transform.velocity.y;
     }
 }

@@ -20,6 +20,10 @@ public abstract class GameObject extends ProcessingEntity {
 	public abstract void start();
 	public abstract void update();
 	public abstract void render();
+
+	public void KeyPressed(char key, int keyCode){ System.out.println(key);}
+	public void KeyReleased(char key, int keyCode){}
+
 	public String ToString() {
 		return this.name;
 	}

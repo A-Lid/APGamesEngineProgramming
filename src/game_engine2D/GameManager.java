@@ -10,6 +10,7 @@ public class GameManager {
         gameObjects = new ArrayList<GameObject>();
         BoundingBoxs = new ArrayList<BoundingBox>();
         physicsGameObject = new ArrayList<GameObject>();
+        playerGameObjects = new ArrayList<GameObject>();
     }
 
 
@@ -21,6 +22,8 @@ public class GameManager {
 
     private ArrayList<GameObject> physicsGameObject;
 
+    private ArrayList<GameObject> playerGameObjects;
+
     //function for adding a game object to the list
     public void addObject(GameObject g){
         gameObjects.add(g);
@@ -29,6 +32,8 @@ public class GameManager {
     public void addPhysicsObject(GameObject g) { physicsGameObject.add(g);};
 
     public void addBoundingBox(GameObject b){BoundingBoxs.add(b.transform.WorldBoundingBox());}
+
+    public void addPlayerObject(GameObject g) { playerGameObjects.add(g);};
 
     //function for removing a game object from the list
     public void removeObject(GameObject g){
@@ -52,15 +57,6 @@ public class GameManager {
             g.physics2D.Gravity(g);
         }
 
-        /*for (BoundingBox bb1:BoundingBoxs) {
-            for (BoundingBox bb2: BoundingBoxs) {
-                if ((bb1.bottom < bb2.top /*&& bb1.bottom > bb2.bottom))
-                {
-                System.out.println("Consider yourself ");
-                //Aled Continue Writing this
-            }
-        }
-        }*/
         
     	parent.background(background);
         for(int i = 0; i < gameObjects.size(); i++){
@@ -68,6 +64,17 @@ public class GameManager {
             GameObject g = gameObjects.get(i);
             g.update();
             g.render();
+        }
+
+    }
+    public void KeyPressed(char key, int keyCode){
+        for (GameObject player:playerGameObjects) {
+            player.KeyPressed(key, keyCode);
+        }
+    }
+    public void KeyReleased(char key, int keyCode){
+        for (GameObject player:playerGameObjects) {
+            player.KeyReleased(key, keyCode);
         }
     }
 
