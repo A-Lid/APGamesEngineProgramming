@@ -55,6 +55,8 @@ public class GameManager {
         {
             if(g.physics2D.ColCheck(g, BoundingBoxs));
             g.physics2D.Gravity(g);
+            g.physics2D.UpdatePosition(g);
+            if(g.IsGrounded)g.physics2D.ApplyFriction(g);
         }
 
         

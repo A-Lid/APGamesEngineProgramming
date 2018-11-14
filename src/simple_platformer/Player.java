@@ -13,7 +13,8 @@ import processing.core.PVector;
  *
  */
 public class Player extends Sprite {
-	float speed = 3f;
+	float speed = 4f;
+	float maxSpeed =0.1f;
 	float gravity = 0.1f;
 	// PVectors for Velocity and Size of Player
 	/*private PVector velocity = new PVector(0, 0);
@@ -31,7 +32,7 @@ public class Player extends Sprite {
 	 public Player(PApplet p, float x, float y, float w, float h, String n) {
 	        super(p);
 	        this.name = n;
-	        speed = 0.2f;
+	        speed = 2f;
 	    }
 	 public void start() {
 	    //start in center of parent
@@ -62,5 +63,27 @@ public class Player extends Sprite {
 		parent.rectMode(PConstants.CORNERS);
 		parent.rect(this.transform.position.x + this.transform.boundingBox.left, this.transform.position.y + this.transform.boundingBox.top, this.transform.position.x + this.transform.boundingBox.right, this.transform.position.y + this.transform.boundingBox.bottom);
 		parent.rectMode(PConstants.CENTER);
+	}
+	@Override
+	public void KeyPressed(char key, int keyCode)
+	{
+		System.out.println(key + " " + IsGrounded + " " + this.transform.velocity.x + " " + this.transform.velocity.y);
+		if(key == 'd' && this.transform.velocity.x < maxSpeed) this.physics2D.Move(this, speed);
+
+		if(key == 'a' && this.transform.velocity.x > -maxSpeed) this.physics2D.Move(this,  -speed);
+
+
+
+
+		if(key == 'w' && IsGrounded)
+		{
+			System.out.println("w");
+			this.physics2D.AddForce(this, new PVector(0,-4));
+		}
+	}
+	@Override
+	public void KeyReleased(char key, int keyCode)
+	{
+		if(key =='a' || key == 'd')this.physics2D.ChangeFriction();
 	}
 }

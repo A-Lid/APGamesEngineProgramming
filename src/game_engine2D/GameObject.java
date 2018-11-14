@@ -1,6 +1,7 @@
 package game_engine2D;
 import processing.core.PApplet;
 import processing.core.PConstants;
+import processing.core.PVector;
 
 import java.util.ArrayList;
 
@@ -13,6 +14,8 @@ public abstract class GameObject extends ProcessingEntity {
 	public String name;
 	public String Collided;
 	public String tag;
+	public boolean IsGrounded;
+
 
 	public Transform transform = new Transform();
 	public Physics2D physics2D = new Physics2D();
