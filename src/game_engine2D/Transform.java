@@ -18,6 +18,7 @@ public class Transform {
 	public PVector rotation = new PVector(0,0);
 	public PVector scale = new PVector(0,0);;
 	public PVector velocity = new PVector(0, 0);
+	public PVector MaxSpeed = new PVector(4,4);
 	public PVector size = new PVector(12,12);
 
 	public BoundingBox boundingBox = new BoundingBox(-1,1,-1,1);

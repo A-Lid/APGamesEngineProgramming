@@ -9,7 +9,8 @@ public class GameManager {
         parent = p;
         gameObjects = new ArrayList<GameObject>();
         BoundingBoxs = new ArrayList<BoundingBox>();
-        collidingGameObject = new ArrayList<GameObject>();
+        physicsGameObject = new ArrayList<GameObject>();
+        playerGameObjects = new ArrayList<GameObject>();
     }
 
 
@@ -19,16 +20,20 @@ public class GameManager {
 
     private ArrayList<BoundingBox> BoundingBoxs;
 
-    private ArrayList<GameObject> collidingGameObject;
+    private ArrayList<GameObject> physicsGameObject;
+
+    private ArrayList<GameObject> playerGameObjects;
 
     //function for adding a game object to the list
     public void addObject(GameObject g){
         gameObjects.add(g);
     }
 
-    public void addCollidingObject(GameObject g) { collidingGameObject.add(g);};
+    public void addPhysicsObject(GameObject g) { physicsGameObject.add(g);};
 
     public void addBoundingBox(GameObject b){BoundingBoxs.add(b.transform.WorldBoundingBox());}
+
+    public void addPlayerObject(GameObject g) { playerGameObjects.add(g);};
 
     //function for removing a game object from the list
     public void removeObject(GameObject g){
@@ -46,20 +51,14 @@ public class GameManager {
     //updates the game object when it's called.
     public void UpdateAll() {
 
-        for (GameObject g: collidingGameObject)
+        for (GameObject g: physicsGameObject)
         {
-            if(g.ColCheck(g, BoundingBoxs)) g.transform.velocity.y = 0;
+            if(g.physics2D.ColCheck(g, BoundingBoxs));
+            g.physics2D.Gravity(g);
+            g.physics2D.UpdatePosition(g);
+            if(g.IsGrounded)g.physics2D.ApplyFriction(g);
         }
 
-        /*for (BoundingBox bb1:BoundingBoxs) {
-            for (BoundingBox bb2: BoundingBoxs) {
-                if ((bb1.bottom < bb2.top /*&& bb1.bottom > bb2.bottom))
-                {
-                System.out.println("Consider yourself ");
-                //Aled Continue Writing this
-            }
-        }
-        }*/
         
     	parent.background(background);
         for(int i = 0; i < gameObjects.size(); i++){
@@ -67,6 +66,17 @@ public class GameManager {
             GameObject g = gameObjects.get(i);
             g.update();
             g.render();
+        }
+
+    }
+    public void KeyPressed(char key, int keyCode){
+        for (GameObject player:playerGameObjects) {
+            player.KeyPressed(key, keyCode);
+        }
+    }
+    public void KeyReleased(char key, int keyCode){
+        for (GameObject player:playerGameObjects) {
+            player.KeyReleased(key, keyCode);
         }
     }
 

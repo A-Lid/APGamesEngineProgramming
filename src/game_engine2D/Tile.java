@@ -4,6 +4,7 @@
 package game_engine2D;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 /**
  * @author rod martin r.martin1@salford.ac.uk
@@ -44,5 +45,10 @@ public class Tile extends Sprite {
 		parent.fill(this.fillColour);
 		parent.rect(0, 0, this.width, this.height);
 		parent.popMatrix();
+
+		/*parent.fill(0,255,0);
+		parent.rectMode(PConstants.CORNERS);
+		parent.rect(this.transform.position.x + this.transform.boundingBox.left, this.transform.position.y + this.transform.boundingBox.top, this.transform.position.x + this.transform.boundingBox.right, this.transform.position.y + this.transform.boundingBox.bottom);
+		parent.rectMode(PConstants.CENTER);*/
 	}
 }
