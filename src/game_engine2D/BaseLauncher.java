@@ -28,5 +28,8 @@ public abstract class BaseLauncher {
     {
         gameManager.KeyReleased(key, keyCode);
     }
+    public void mouseClicked(int mouseX, int mouseY){
+        gameManager.mouseClicked(mouseX, mouseY);
+    }
 
 }

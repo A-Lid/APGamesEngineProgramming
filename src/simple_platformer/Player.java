@@ -67,7 +67,7 @@ public class Player extends Sprite {
 	@Override
 	public void KeyPressed(char key, int keyCode)
 	{
-		System.out.println(key + " " + IsGrounded + " " + this.transform.velocity.x + " " + this.transform.velocity.y);
+		//System.out.println(key + " " + IsGrounded + " " + this.transform.velocity.x + " " + this.transform.velocity.y);
 		if(key == 'd' && this.transform.velocity.x < maxSpeed) this.physics2D.Move(this, speed);
 
 		if(key == 'a' && this.transform.velocity.x > -maxSpeed) this.physics2D.Move(this,  -speed);
@@ -77,7 +77,7 @@ public class Player extends Sprite {
 
 		if(key == 'w' && IsGrounded)
 		{
-			System.out.println("w");
+			//System.out.println("w");
 			this.physics2D.AddForce(this, new PVector(0,-4));
 		}
 	}

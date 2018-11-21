@@ -28,4 +28,8 @@ public class Main extends PApplet {
 	{
 		launcher.KeyReleased(key, keyCode);
 	}
+	public void mouseClicked()
+	{
+		launcher.mouseClicked(mouseX, mouseY);
+	}
 }

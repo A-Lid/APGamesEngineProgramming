@@ -46,6 +46,7 @@ public class Physics2D {
                 {
                     check.Collided = "BOTTOM";
                     check.transform.position.y = bb2.bottom;
+                    check.transform.position.y = (bb2.bottom + 1+  (check.transform.size.y/2));
                     System.out.println("Consider yourself collided with bottom of " + check.name);
                     retVal = true;
                 }

@@ -25,6 +25,11 @@ public class Launcher extends BaseLauncher{
 
         //this.gameManager.addBoundingBox(player);
         this.gameManager.addPhysicsObject(player);
+
+        Camera2D camera = new Camera2D(parent,player,99);
+        camera.CameraOffset.y = 99;
+        this.gameManager.addObject(camera);
+
    
         
         int platforms = 8;
