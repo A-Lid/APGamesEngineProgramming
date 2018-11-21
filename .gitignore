@@ -1,1 +1,6 @@
 /bin/
+/.classpath
+/.project
+/JavaTesting2.iml
+/.idea/*
+/.setting/*
