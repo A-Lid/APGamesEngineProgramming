@@ -3,13 +3,14 @@ import processing.core.*;
 import java.util.ArrayList;
 /* Example of basic Launch processing applet*/
 public class GameManager {
+    public ScreenManager screenManager;
     public PApplet parent; // The parent PApplet that we will render ourselves onto
     public int background = 0;
     public static PVector Offset = new PVector(0,0);
     public static PVector ScreenOffset = new PVector(0,0);
     public GameManager(PApplet p){
 
-
+        screenManager = new ScreenManager(this);
 
         parent = p;
         gameObjects = new ArrayList<GameObject>();
@@ -28,13 +29,13 @@ public class GameManager {
 
 
     // a list of all the game objects in the game (?)
-    private ArrayList<GameObject> gameObjects;
+    public ArrayList<GameObject> gameObjects;
 
-    private ArrayList<BoundingBox> BoundingBoxs;
+    public ArrayList<BoundingBox> BoundingBoxs;
 
-    private ArrayList<GameObject> physicsGameObject;
+    public ArrayList<GameObject> physicsGameObject;
 
-    private ArrayList<GameObject> playerGameObjects;
+    public ArrayList<GameObject> playerGameObjects;
 
     //function for adding a game object to the list
     public void addObject(GameObject g){
@@ -89,6 +90,7 @@ public class GameManager {
         for (GameObject player:playerGameObjects) {
             player.KeyPressed(key, keyCode);
         }
+        if (key == 's') SaveScreen();
     }
     public void KeyReleased(char key, int keyCode){
         for (GameObject player:playerGameObjects) {
@@ -100,6 +102,10 @@ public class GameManager {
         mouseCoords = new PVector(mouseX,mouseY);
         isMakingPlatform = true;
 
+    }
+    public  void SaveScreen()
+    {
+        this.screenManager.SaveScreen();
     }
     private void makePlatform(PVector Coords)
     {

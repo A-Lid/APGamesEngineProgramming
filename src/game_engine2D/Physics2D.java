@@ -45,14 +45,36 @@ public class Physics2D {
                 else if (bb1.top < bb2.bottom && bb1.top > bb2.top)
                 {
                     check.Collided = "BOTTOM";
-                    check.transform.position.y = bb2.bottom;
-                    check.transform.position.y = (bb2.bottom + 1+  (check.transform.size.y/2));
-                    System.out.println("Consider yourself collided with bottom of " + check.name);
+                    if (check.transform.velocity.y < 0) check.transform.velocity.y = 0;
+                    check.transform.position.y = (bb2.bottom +  (check.transform.size.y/2));
+                    //System.out.println("Consider yourself collided with bottom of " + check.name);
                     retVal = true;
                 }
                 //Aled Continue Writing this
             }
-            else check.Collided = "NONE";
+
+            if (check.transform.position.y < bb2.bottom && check.transform.position.y > bb2.top)
+            {
+                //System.out.println("Existential Screaming");
+                if (bb1.right > bb2.right && bb1.left < bb2.right)
+                {
+                    check.Collided = "RIGHT";
+                    if (check.transform.velocity.x < 0) check.transform.velocity.x = 0;
+                    check.transform.position.x = (bb2.right +  (check.transform.size.x/2));
+                    retVal = true;
+                    System.out.println("Hallo, collide right");
+                }
+                else if (bb1.left < bb2.left && bb1.right > bb2.left)
+                {
+                    check.Collided = "LEFT";
+                    if (check.transform.velocity.x > 0) check.transform.velocity.x = 0;
+                    check.transform.position.x = (bb2.left -  (check.transform.size.x/2));
+                    retVal = true;
+
+                    System.out.println("Hallo, collide left");
+                }
+            }
+            else if (!retVal)check.Collided = "NONE";
         }
 
 
