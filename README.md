@@ -1,8 +1,8 @@
 # Processing
 
-###Controls
+### Controls
 
-####Movement
+#### Movement
 
 W - Jump
 
@@ -10,6 +10,6 @@ A - Left
 
 D - Right
 
-####Menus
+#### Menus
 
 S - Save game
