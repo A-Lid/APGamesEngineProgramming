@@ -72,7 +72,7 @@ public class Player extends Sprite {
 
 		if(key == 'a' && this.transform.velocity.x > -maxSpeed) this.physics2D.Move(this,  -speed);
 
-
+		if(key == 'h') System.out.println("I'm still alive" + this.transform.position);
 
 
 		if(key == 'w' && IsGrounded)

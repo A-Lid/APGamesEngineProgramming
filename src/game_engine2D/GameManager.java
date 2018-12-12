@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /* Example of basic Launch processing applet*/
 public class GameManager {
     public ScreenManager screenManager;
-    public PApplet parent; // The parent PApplet that we will render ourselves onto
+    public PApplet parent; // The gameManager PApplet that we will render ourselves onto
     public int background = 0;
     public static PVector Offset = new PVector(0,0);
     public static PVector ScreenOffset = new PVector(0,0);
@@ -91,6 +91,7 @@ public class GameManager {
             player.KeyPressed(key, keyCode);
         }
         if (key == 's') SaveScreen();
+        if (key == 'l') LoadScreen();
     }
     public void KeyReleased(char key, int keyCode){
         for (GameObject player:playerGameObjects) {
@@ -106,6 +107,10 @@ public class GameManager {
     public  void SaveScreen()
     {
         this.screenManager.SaveScreen();
+    }
+    public  void LoadScreen()
+    {
+        this.screenManager.LoadScreen("data/test.JSON");
     }
     private void makePlatform(PVector Coords)
     {

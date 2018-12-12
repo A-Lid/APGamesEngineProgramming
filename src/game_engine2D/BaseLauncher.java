@@ -5,7 +5,7 @@ import processing.core.PApplet;
  * This will be used when making a new game package like asteroids
  *  */
 public abstract class BaseLauncher {
-    public PApplet parent; // The parent PApplet that we will render ourselves onto
+    public PApplet parent; // The gameManager PApplet that we will render ourselves onto
 
    
     public BaseLauncher(PApplet p){

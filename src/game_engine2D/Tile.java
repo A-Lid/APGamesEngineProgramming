@@ -18,6 +18,8 @@ public class Tile extends Sprite {
 	
 	public Tile(PApplet p, int x, int y, int w, int h, String n) {
 		super(p, x, y);
+		this.transform.size.x = w;
+		this.transform.size.y = h;
 		this.width = w;
 		this.height = h;
 		this.name = n;
@@ -46,9 +48,9 @@ public class Tile extends Sprite {
 		parent.rect(0, 0, this.width, this.height);
 		parent.popMatrix();
 
-		/*parent.fill(0,255,0);
-		parent.rectMode(PConstants.CORNERS);
-		parent.rect(this.transform.position.x + this.transform.boundingBox.left, this.transform.position.y + this.transform.boundingBox.top, this.transform.position.x + this.transform.boundingBox.right, this.transform.position.y + this.transform.boundingBox.bottom);
-		parent.rectMode(PConstants.CENTER);*/
+		/*gameManager.fill(0,255,0);
+		gameManager.rectMode(PConstants.CORNERS);
+		gameManager.rect(this.transform.position.x + this.transform.boundingBox.left, this.transform.position.y + this.transform.boundingBox.top, this.transform.position.x + this.transform.boundingBox.right, this.transform.position.y + this.transform.boundingBox.bottom);
+		gameManager.rectMode(PConstants.CENTER);*/
 	}
 }

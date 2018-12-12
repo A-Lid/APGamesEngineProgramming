@@ -10,9 +10,10 @@ import processing.core.PApplet;
  *
  */
 public abstract class ProcessingEntity {
+
 	public String name;
 	public int ID;
-    public PApplet parent; // The parent PApplet that we will render ourselves onto
+    public PApplet parent; // The gameManager PApplet that we will render ourselves onto
     
     public ProcessingEntity(PApplet p){
         parent = p;
